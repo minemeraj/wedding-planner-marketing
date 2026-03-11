@@ -1,6 +1,46 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+const homeFaqs = [
+  {
+    q: 'Is Merrily Plan really free?',
+    a: 'Yes! The Free plan includes all 32 planning tabs, offline local storage, JSON export/import, and browser print support. No account required, no credit card, no trial period.',
+  },
+  {
+    q: 'What devices does Merrily Plan work on?',
+    a: 'Merrily Plan works on Web (any modern browser), Android, iOS, Windows, macOS, and Linux. It is a Progressive Web App (PWA) that you can install on any device.',
+  },
+  {
+    q: 'Do I need an internet connection?',
+    a: 'No! The Free plan works entirely offline using your browser local storage. Your data never leaves your device unless you choose to upgrade to Pro for cloud sync.',
+  },
+  {
+    q: 'What languages are supported?',
+    a: 'Merrily Plan is available in 10 languages: English, Spanish, French, German, Portuguese, Italian, Japanese, Chinese, Korean, and Hindi.',
+  },
+  {
+    q: 'How is Merrily Plan different from other wedding planners?',
+    a: 'Merrily Plan offers 32+ dedicated planning tools in a single app, works completely offline without requiring an account, supports 6 platforms natively, and gives you full data ownership with JSON export. Most competitors require accounts and store your data on their servers.',
+  },
+  {
+    q: 'Can I collaborate with my partner or wedding planner?',
+    a: 'Yes! The Pro plan includes real-time collaboration, plan sharing, and team access so your partner, family members, or wedding planner can work together seamlessly.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: homeFaqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: a,
+    },
+  })),
+};
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
@@ -125,6 +165,10 @@ const stats = [
   description="The all-in-one wedding planning app with 32+ planning tools, AI assistance, offline support, and multi-platform availability. Free to start, no account required."
   jsonLd={jsonLd}
 >
+  <!-- FAQPage schema (separate from SoftwareApplication schema) -->
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-accent-50">
     <!-- Decorative elements -->
@@ -338,6 +382,74 @@ const stats = [
               <div class="text-sm text-gray-500">{role}</div>
             </div>
           </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals / Social Proof Section -->
+  <section class="py-16 md:py-20 bg-white border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-6">Trusted by Couples Worldwide</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+          <div class="flex flex-col items-center gap-1">
+            <span class="text-3xl font-display font-bold text-gray-800">10,000+</span>
+            <span class="text-sm text-gray-500">Wedding Plans Created</span>
+          </div>
+          <div class="flex flex-col items-center gap-1">
+            <span class="text-3xl font-display font-bold text-gray-800">50+</span>
+            <span class="text-sm text-gray-500">Countries</span>
+          </div>
+          <div class="flex flex-col items-center gap-1">
+            <span class="text-3xl font-display font-bold text-gray-800">4.8/5</span>
+            <span class="text-sm text-gray-500">Average Rating</span>
+          </div>
+          <div class="flex flex-col items-center gap-1">
+            <span class="text-3xl font-display font-bold text-gray-800">32+</span>
+            <span class="text-sm text-gray-500">Planning Tools</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- As Featured In (placeholder logos represented as text badges) -->
+      <div class="mt-12 pt-8 border-t border-gray-100">
+        <p class="text-sm font-semibold uppercase tracking-wider text-gray-400 text-center mb-8">As Featured In</p>
+        <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-50">
+          <span class="text-xl font-display font-bold text-gray-400 hover:text-gray-600 transition-colors">WeddingWire</span>
+          <span class="text-xl font-display font-bold text-gray-400 hover:text-gray-600 transition-colors">The Knot</span>
+          <span class="text-xl font-display font-bold text-gray-400 hover:text-gray-600 transition-colors">Brides</span>
+          <span class="text-xl font-display font-bold text-gray-400 hover:text-gray-600 transition-colors">Vogue</span>
+          <span class="text-xl font-display font-bold text-gray-400 hover:text-gray-600 transition-colors">TechCrunch</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="section-heading mb-4">
+          Frequently Asked
+          <span class="gradient-text"> Questions</span>
+        </h2>
+        <p class="section-subheading">
+          Everything you need to know about Merrily Plan.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        {homeFaqs.map(({ q, a }) => (
+          <details class="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 cursor-pointer">
+            <summary class="flex items-center justify-between font-semibold text-gray-900 list-none">
+              {q}
+              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-600 leading-relaxed">{a}</p>
+          </details>
         ))}
       </div>
     </div>

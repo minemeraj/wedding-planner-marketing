@@ -1,7 +1,25 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 import '../styles/global.css';
+
+// Organization schema — injected on every page
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Merrily Plan',
+  url: 'https://merrilyplan.com',
+  logo: 'https://merrilyplan.com/favicon.svg',
+  description: 'The all-in-one wedding planning app with 32+ planning tools, AI assistance, and multi-platform support.',
+  sameAs: [],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    email: 'hello@merrilyplan.com',
+    url: 'https://merrilyplan.com/contact',
+  },
+};
 
 interface Props {
   title: string;
@@ -41,7 +59,6 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, Astro
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -60,10 +77,29 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, Astro
     <!-- Sitemap -->
     <link rel="sitemap" href="/sitemap-index.xml" />
 
-    <!-- JSON-LD Structured Data -->
+    <!-- Hreflang tags for international SEO -->
+    <link rel="alternate" hreflang="en" href={canonical} />
+    <link rel="alternate" hreflang="es" href={canonical} />
+    <link rel="alternate" hreflang="fr" href={canonical} />
+    <link rel="alternate" hreflang="de" href={canonical} />
+    <link rel="alternate" hreflang="pt" href={canonical} />
+    <link rel="alternate" hreflang="it" href={canonical} />
+    <link rel="alternate" hreflang="ja" href={canonical} />
+    <link rel="alternate" hreflang="zh" href={canonical} />
+    <link rel="alternate" hreflang="ko" href={canonical} />
+    <link rel="alternate" hreflang="hi" href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={canonical} />
+
+    <!-- JSON-LD Structured Data: Organization (every page) -->
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+
+    <!-- JSON-LD Structured Data: Page-specific -->
     {jsonLd && (
       <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     )}
+
+    <!-- Additional head content from pages -->
+    <slot name="head" />
 
     <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -75,5 +111,6 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, Astro
       <slot />
     </main>
     <Footer />
+    <CookieConsent />
   </body>
 </html>

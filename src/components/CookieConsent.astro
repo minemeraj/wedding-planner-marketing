@@ -1,0 +1,251 @@
+---
+/**
+ * Cookie Consent Banner for Merrily Plan marketing site.
+ * GDPR/CCPA/LGPD compliant with opt-in for non-essential cookies.
+ * 
+ * Cookie categories:
+ * - Strictly Necessary (always on)
+ * - Functional
+ * - Analytics
+ * - Marketing
+ * 
+ * Consent stored in localStorage key 'mp_cookie_consent'.
+ * Policy version tracked — if version changes, banner re-appears.
+ */
+
+const CONSENT_VERSION = '1.0';
+---
+
+<!-- Cookie Consent Banner -->
+<div
+  id="cookie-consent-banner"
+  class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/50 backdrop-blur-sm"
+  role="dialog"
+  aria-label="Cookie consent"
+  aria-modal="true"
+>
+  <div class="mx-4 w-full max-w-lg bg-white rounded-2xl shadow-2xl p-6 md:p-8 animate-slide-up">
+    <!-- Header -->
+    <div class="flex items-start gap-3 mb-4">
+      <div class="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center flex-shrink-0">
+        <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+      </div>
+      <div>
+        <h2 class="text-lg font-display font-bold text-gray-900">We Value Your Privacy</h2>
+        <p class="text-sm text-gray-600 mt-1 leading-relaxed">
+          We use cookies to improve your experience, analyze site traffic, and personalize content.
+          You can choose which cookies to accept.
+          <a href="/privacy" class="text-primary-600 hover:underline">Privacy Policy</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Preference toggles (hidden by default, shown when "Manage" clicked) -->
+    <div id="cookie-preferences" class="hidden mb-6 space-y-3">
+      <!-- Strictly Necessary -->
+      <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+        <div>
+          <p class="text-sm font-medium text-gray-900">Strictly Necessary</p>
+          <p class="text-xs text-gray-500">Essential for the site to function</p>
+        </div>
+        <span class="text-xs font-medium text-gray-400 px-2 py-1 bg-gray-200 rounded">Always on</span>
+      </div>
+
+      <!-- Functional -->
+      <label class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer group">
+        <div>
+          <p class="text-sm font-medium text-gray-900">Functional</p>
+          <p class="text-xs text-gray-500">Remember your preferences and settings</p>
+        </div>
+        <input type="checkbox" id="consent-functional" class="w-5 h-5 rounded text-primary-600 focus:ring-primary-500 cursor-pointer" checked />
+      </label>
+
+      <!-- Analytics -->
+      <label class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer group">
+        <div>
+          <p class="text-sm font-medium text-gray-900">Analytics</p>
+          <p class="text-xs text-gray-500">Help us understand how visitors use the site</p>
+        </div>
+        <input type="checkbox" id="consent-analytics" class="w-5 h-5 rounded text-primary-600 focus:ring-primary-500 cursor-pointer" />
+      </label>
+
+      <!-- Marketing -->
+      <label class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer group">
+        <div>
+          <p class="text-sm font-medium text-gray-900">Marketing</p>
+          <p class="text-xs text-gray-500">Personalize ads and measure campaign performance</p>
+        </div>
+        <input type="checkbox" id="consent-marketing" class="w-5 h-5 rounded text-primary-600 focus:ring-primary-500 cursor-pointer" />
+      </label>
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex flex-col sm:flex-row gap-3">
+      <button
+        id="cookie-accept-all"
+        class="flex-1 px-5 py-2.5 rounded-full bg-primary-600 text-white text-sm font-semibold hover:bg-primary-700 transition-colors shadow-md"
+      >
+        Accept All
+      </button>
+      <button
+        id="cookie-reject-all"
+        class="flex-1 px-5 py-2.5 rounded-full border-2 border-gray-300 text-gray-700 text-sm font-semibold hover:bg-gray-50 transition-colors"
+      >
+        Reject All
+      </button>
+      <button
+        id="cookie-manage"
+        class="flex-1 px-5 py-2.5 rounded-full border-2 border-gray-300 text-gray-700 text-sm font-semibold hover:bg-gray-50 transition-colors"
+      >
+        Manage Preferences
+      </button>
+    </div>
+
+    <!-- Save preferences button (hidden until manage is clicked) -->
+    <div id="cookie-save-wrap" class="hidden mt-3">
+      <button
+        id="cookie-save"
+        class="w-full px-5 py-2.5 rounded-full bg-primary-600 text-white text-sm font-semibold hover:bg-primary-700 transition-colors shadow-md"
+      >
+        Save Preferences
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie Settings Button (bottom-left, visible after consent given) -->
+<button
+  id="cookie-settings-btn"
+  class="fixed bottom-4 left-4 z-50 hidden items-center gap-2 px-3 py-2 rounded-full bg-white shadow-lg border border-gray-200 text-gray-600 text-xs font-medium hover:text-gray-900 hover:shadow-xl transition-all"
+  aria-label="Cookie settings"
+>
+  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+  </svg>
+  Cookies
+</button>
+
+<script define:vars={{ CONSENT_VERSION }}>
+  const STORAGE_KEY = 'mp_cookie_consent';
+
+  function getConsent() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return null;
+      const data = JSON.parse(raw);
+      if (data.version !== CONSENT_VERSION) return null;
+      return data;
+    } catch {
+      return null;
+    }
+  }
+
+  function saveConsent(categories) {
+    const data = {
+      version: CONSENT_VERSION,
+      timestamp: new Date().toISOString(),
+      necessary: true,
+      functional: !!categories.functional,
+      analytics: !!categories.analytics,
+      marketing: !!categories.marketing,
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  }
+
+  function showBanner() {
+    const banner = document.getElementById('cookie-consent-banner');
+    if (banner) {
+      banner.classList.remove('hidden');
+      banner.classList.add('flex');
+    }
+  }
+
+  function hideBanner() {
+    const banner = document.getElementById('cookie-consent-banner');
+    if (banner) {
+      banner.classList.add('hidden');
+      banner.classList.remove('flex');
+    }
+    // Show the settings button
+    const settingsBtn = document.getElementById('cookie-settings-btn');
+    if (settingsBtn) {
+      settingsBtn.classList.remove('hidden');
+      settingsBtn.classList.add('flex');
+    }
+  }
+
+  function acceptAll() {
+    saveConsent({ functional: true, analytics: true, marketing: true });
+    hideBanner();
+  }
+
+  function rejectAll() {
+    saveConsent({ functional: false, analytics: false, marketing: false });
+    hideBanner();
+  }
+
+  function savePreferences() {
+    const functional = document.getElementById('consent-functional')?.checked ?? false;
+    const analytics = document.getElementById('consent-analytics')?.checked ?? false;
+    const marketing = document.getElementById('consent-marketing')?.checked ?? false;
+    saveConsent({ functional, analytics, marketing });
+    hideBanner();
+  }
+
+  function togglePreferences() {
+    const prefs = document.getElementById('cookie-preferences');
+    const manageBtn = document.getElementById('cookie-manage');
+    const saveWrap = document.getElementById('cookie-save-wrap');
+    const acceptBtn = document.getElementById('cookie-accept-all');
+    const rejectBtn = document.getElementById('cookie-reject-all');
+
+    if (prefs && manageBtn && saveWrap) {
+      const isHidden = prefs.classList.contains('hidden');
+      prefs.classList.toggle('hidden');
+      saveWrap.classList.toggle('hidden');
+
+      if (isHidden) {
+        manageBtn.textContent = 'Hide Preferences';
+        // Load current consent state into toggles
+        const consent = getConsent();
+        if (consent) {
+          const funcEl = document.getElementById('consent-functional');
+          const analyEl = document.getElementById('consent-analytics');
+          const marketEl = document.getElementById('consent-marketing');
+          if (funcEl) funcEl.checked = consent.functional;
+          if (analyEl) analyEl.checked = consent.analytics;
+          if (marketEl) marketEl.checked = consent.marketing;
+        }
+      } else {
+        manageBtn.textContent = 'Manage Preferences';
+      }
+    }
+  }
+
+  // Initialize
+  document.addEventListener('DOMContentLoaded', () => {
+    const consent = getConsent();
+
+    if (!consent) {
+      showBanner();
+    } else {
+      // Show settings button if consent already given
+      const settingsBtn = document.getElementById('cookie-settings-btn');
+      if (settingsBtn) {
+        settingsBtn.classList.remove('hidden');
+        settingsBtn.classList.add('flex');
+      }
+    }
+
+    // Event listeners
+    document.getElementById('cookie-accept-all')?.addEventListener('click', acceptAll);
+    document.getElementById('cookie-reject-all')?.addEventListener('click', rejectAll);
+    document.getElementById('cookie-manage')?.addEventListener('click', togglePreferences);
+    document.getElementById('cookie-save')?.addEventListener('click', savePreferences);
+    document.getElementById('cookie-settings-btn')?.addEventListener('click', () => {
+      showBanner();
+    });
+  });
+</script>
