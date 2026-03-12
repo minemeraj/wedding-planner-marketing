@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../utils/url';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -174,7 +175,7 @@ const jsonLd = {
             <p class="text-sm text-gray-600 mb-4">
               Check our pricing FAQ for common questions about plans, billing, and features.
             </p>
-            <a href="/pricing#faq" class="text-primary-600 font-medium text-sm hover:text-primary-700">
+            <a href={url('/pricing#faq')} class="text-primary-600 font-medium text-sm hover:text-primary-700">
               View FAQ &rarr;
             </a>
           </div>

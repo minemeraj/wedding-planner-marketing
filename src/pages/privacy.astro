@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../utils/url';
 
 const lastUpdated = 'March 11, 2026';
 ---
@@ -173,7 +174,7 @@ const lastUpdated = 'March 11, 2026';
       </p>
       <ul>
         <li><strong>Email</strong>: <a href="mailto:hello@merrilyplan.com">hello@merrilyplan.com</a></li>
-        <li><strong>Contact form</strong>: <a href="/contact">merrilyplan.com/contact</a></li>
+        <li><strong>Contact form</strong>: <a href={url('/contact')}>merrilyplan.com/contact</a></li>
       </ul>
     </div>
   </section>

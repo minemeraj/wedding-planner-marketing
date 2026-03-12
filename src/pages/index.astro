@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../utils/url';
 
 const homeFaqs = [
   {
@@ -649,7 +650,7 @@ const stats = [
           </svg>
         </a>
         <a
-          href="/pricing"
+          href={url('/pricing')}
           class="inline-flex items-center px-10 py-4 rounded-full border-2 border-white/50 text-white font-semibold text-lg hover:bg-white/10 transition-all duration-200"
         >
           View Pricing

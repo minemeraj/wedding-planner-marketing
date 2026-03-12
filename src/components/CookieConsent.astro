@@ -13,6 +13,8 @@
  * Policy version tracked — if version changes, banner re-appears.
  */
 
+import { url } from '../utils/url';
+
 const CONSENT_VERSION = '1.0';
 ---
 
@@ -37,7 +39,7 @@ const CONSENT_VERSION = '1.0';
         <p class="text-sm text-gray-600 mt-1 leading-relaxed">
           We use cookies to improve your experience, analyze site traffic, and personalize content.
           You can choose which cookies to accept.
-          <a href="/privacy" class="text-primary-600 hover:underline">Privacy Policy</a>
+          <a href={url('/privacy')} class="text-primary-600 hover:underline">Privacy Policy</a>
         </p>
       </div>
     </div>

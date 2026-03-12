@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { url } from '../../utils/url';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -73,7 +74,7 @@ const breadcrumbSchema = {
     <nav aria-label="Breadcrumb" class="mb-8">
       <ol class="flex items-center text-sm text-gray-500 gap-2">
         <li>
-          <a href="/" class="hover:text-primary-600 transition-colors">Home</a>
+          <a href={url('/')} class="hover:text-primary-600 transition-colors">Home</a>
         </li>
         <li aria-hidden="true">
           <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -81,7 +82,7 @@ const breadcrumbSchema = {
           </svg>
         </li>
         <li>
-          <a href="/blog" class="hover:text-primary-600 transition-colors">Blog</a>
+          <a href={url('/blog')} class="hover:text-primary-600 transition-colors">Blog</a>
         </li>
         <li aria-hidden="true">
           <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
