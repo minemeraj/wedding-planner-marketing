@@ -356,9 +356,9 @@ const stats = [
   </section>
 
   <!-- App Preview / Screenshot Section -->
-  <section class="py-20 md:py-28 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+  <section class="py-16 md:py-28 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
+      <div class="text-center mb-10 md:mb-16">
         <h2 class="section-heading mb-4">
           See It in
           <span class="gradient-text"> Action</span>
@@ -371,24 +371,24 @@ const stats = [
       <!-- Desktop mockup -->
       <div class="relative max-w-5xl mx-auto">
         <!-- Browser chrome frame -->
-        <div class="bg-gray-800 rounded-t-2xl px-4 py-3 flex items-center gap-2">
-          <div class="flex gap-1.5">
-            <div class="w-3 h-3 rounded-full bg-red-400"></div>
-            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+        <div class="bg-gray-800 rounded-t-xl sm:rounded-t-2xl px-3 sm:px-4 py-2 sm:py-3 flex items-center gap-2">
+          <div class="flex gap-1 sm:gap-1.5">
+            <div class="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-red-400"></div>
+            <div class="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-yellow-400"></div>
+            <div class="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-green-400"></div>
           </div>
           <div class="flex-1 flex justify-center">
-            <div class="bg-gray-700 rounded-lg px-4 py-1 text-xs text-gray-400 max-w-xs w-full text-center">
+            <div class="bg-gray-700 rounded-md sm:rounded-lg px-3 sm:px-4 py-1 text-[10px] sm:text-xs text-gray-400 max-w-xs w-full text-center">
               app.merrilyplan.com
             </div>
           </div>
         </div>
 
         <!-- App UI mockup content -->
-        <div class="bg-white rounded-b-2xl shadow-2xl border border-gray-200 border-t-0 overflow-hidden">
-          <div class="flex min-h-[400px] md:min-h-[500px]">
-            <!-- Sidebar -->
-            <div class="hidden md:flex flex-col w-56 bg-gray-50 border-r border-gray-200 p-4">
+        <div class="bg-white rounded-b-xl sm:rounded-b-2xl shadow-2xl border border-gray-200 border-t-0 overflow-hidden">
+          <div class="flex">
+            <!-- Sidebar (hidden on mobile and tablet) -->
+            <div class="hidden lg:flex flex-col w-56 bg-gray-50 border-r border-gray-200 p-4">
               <div class="flex items-center gap-2 mb-6 pb-4 border-b border-gray-200">
                 <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
                   <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -410,11 +410,11 @@ const stats = [
             </div>
 
             <!-- Main content area -->
-            <div class="flex-1 p-6 md:p-8">
-              <div class="flex items-center justify-between mb-8">
+            <div class="flex-1 p-4 sm:p-6 md:p-8">
+              <div class="flex items-center justify-between mb-4 sm:mb-8">
                 <div>
-                  <h3 class="text-lg font-display font-bold text-gray-900">Wedding Dashboard</h3>
-                  <p class="text-sm text-gray-500">June 15, 2026 - 128 days to go</p>
+                  <h3 class="text-sm sm:text-lg font-display font-bold text-gray-900">Wedding Dashboard</h3>
+                  <p class="text-xs sm:text-sm text-gray-500">June 15, 2026 - 128 days to go</p>
                 </div>
                 <div class="hidden sm:flex items-center gap-2">
                   <div class="px-3 py-1.5 rounded-lg bg-green-50 text-green-700 text-xs font-medium">On Track</div>
@@ -422,58 +422,58 @@ const stats = [
               </div>
 
               <!-- Stats cards -->
-              <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                <div class="bg-primary-50 rounded-xl p-4">
-                  <p class="text-xs text-primary-600 font-medium mb-1">Budget</p>
-                  <p class="text-lg font-bold text-gray-900">$24,500</p>
-                  <p class="text-xs text-gray-500">of $30,000</p>
+              <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 mb-4 sm:mb-8">
+                <div class="bg-primary-50 rounded-lg sm:rounded-xl p-2.5 sm:p-4">
+                  <p class="text-[10px] sm:text-xs text-primary-600 font-medium mb-0.5 sm:mb-1">Budget</p>
+                  <p class="text-sm sm:text-lg font-bold text-gray-900">$24,500</p>
+                  <p class="text-[10px] sm:text-xs text-gray-500">of $30,000</p>
                 </div>
-                <div class="bg-blue-50 rounded-xl p-4">
-                  <p class="text-xs text-blue-600 font-medium mb-1">Guests</p>
-                  <p class="text-lg font-bold text-gray-900">142</p>
-                  <p class="text-xs text-gray-500">86 confirmed</p>
+                <div class="bg-blue-50 rounded-lg sm:rounded-xl p-2.5 sm:p-4">
+                  <p class="text-[10px] sm:text-xs text-blue-600 font-medium mb-0.5 sm:mb-1">Guests</p>
+                  <p class="text-sm sm:text-lg font-bold text-gray-900">142</p>
+                  <p class="text-[10px] sm:text-xs text-gray-500">86 confirmed</p>
                 </div>
-                <div class="bg-green-50 rounded-xl p-4">
-                  <p class="text-xs text-green-600 font-medium mb-1">Tasks</p>
-                  <p class="text-lg font-bold text-gray-900">28/45</p>
-                  <p class="text-xs text-gray-500">62% complete</p>
+                <div class="bg-green-50 rounded-lg sm:rounded-xl p-2.5 sm:p-4">
+                  <p class="text-[10px] sm:text-xs text-green-600 font-medium mb-0.5 sm:mb-1">Tasks</p>
+                  <p class="text-sm sm:text-lg font-bold text-gray-900">28/45</p>
+                  <p class="text-[10px] sm:text-xs text-gray-500">62% done</p>
                 </div>
-                <div class="bg-purple-50 rounded-xl p-4">
-                  <p class="text-xs text-purple-600 font-medium mb-1">Vendors</p>
-                  <p class="text-lg font-bold text-gray-900">8</p>
-                  <p class="text-xs text-gray-500">5 confirmed</p>
+                <div class="bg-purple-50 rounded-lg sm:rounded-xl p-2.5 sm:p-4">
+                  <p class="text-[10px] sm:text-xs text-purple-600 font-medium mb-0.5 sm:mb-1">Vendors</p>
+                  <p class="text-sm sm:text-lg font-bold text-gray-900">8</p>
+                  <p class="text-[10px] sm:text-xs text-gray-500">5 confirmed</p>
                 </div>
               </div>
 
               <!-- Progress bar -->
-              <div class="mb-8">
-                <div class="flex items-center justify-between text-sm mb-2">
+              <div class="mb-4 sm:mb-8">
+                <div class="flex items-center justify-between text-xs sm:text-sm mb-1.5 sm:mb-2">
                   <span class="font-medium text-gray-700">Overall Progress</span>
                   <span class="text-primary-600 font-semibold">62%</span>
                 </div>
-                <div class="w-full bg-gray-100 rounded-full h-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-accent-500 h-3 rounded-full" style="width: 62%"></div>
+                <div class="w-full bg-gray-100 rounded-full h-2 sm:h-3">
+                  <div class="bg-gradient-to-r from-primary-500 to-accent-500 h-2 sm:h-3 rounded-full" style="width: 62%"></div>
                 </div>
               </div>
 
-              <!-- Upcoming tasks preview -->
-              <div>
+              <!-- Upcoming tasks preview (hidden on very small screens) -->
+              <div class="hidden sm:block">
                 <h4 class="text-sm font-semibold text-gray-700 mb-3">Upcoming Tasks</h4>
                 <div class="space-y-2">
                   <div class="flex items-center gap-3 p-3 rounded-lg bg-gray-50">
                     <div class="w-5 h-5 rounded border-2 border-primary-400 flex-shrink-0"></div>
                     <span class="text-sm text-gray-700">Finalize ceremony music playlist</span>
-                    <span class="ml-auto text-xs text-gray-400">Mar 20</span>
+                    <span class="ml-auto text-xs text-gray-400 whitespace-nowrap">Mar 20</span>
                   </div>
                   <div class="flex items-center gap-3 p-3 rounded-lg bg-gray-50">
                     <div class="w-5 h-5 rounded border-2 border-primary-400 flex-shrink-0"></div>
                     <span class="text-sm text-gray-700">Send RSVP reminders</span>
-                    <span class="ml-auto text-xs text-gray-400">Mar 25</span>
+                    <span class="ml-auto text-xs text-gray-400 whitespace-nowrap">Mar 25</span>
                   </div>
                   <div class="flex items-center gap-3 p-3 rounded-lg bg-gray-50">
                     <div class="w-5 h-5 rounded border-2 border-gray-300 flex-shrink-0 bg-white"></div>
                     <span class="text-sm text-gray-700">Book hair & makeup trial</span>
-                    <span class="ml-auto text-xs text-gray-400">Apr 1</span>
+                    <span class="ml-auto text-xs text-gray-400 whitespace-nowrap">Apr 1</span>
                   </div>
                 </div>
               </div>
@@ -485,8 +485,8 @@ const stats = [
         <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-3/4 h-12 bg-primary-500/10 blur-2xl rounded-full"></div>
       </div>
 
-      <div class="text-center mt-12">
-        <a href="https://app.merrilyplan.com" class="btn-primary text-lg px-10 py-4">
+      <div class="text-center mt-10 md:mt-12">
+        <a href="https://app.merrilyplan.com" class="btn-primary text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4">
           Try It Free
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
