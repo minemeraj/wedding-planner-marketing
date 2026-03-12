@@ -1,28 +1,49 @@
 ---
-import { url } from '../utils/url';
+import { localePath } from '../utils/url';
+import { t, switchLocaleUrl, SUPPORTED_LOCALES, type Locale } from '../i18n/utils';
 
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
-  { href: url('/'), label: 'Home' },
-  { href: url('/pricing'), label: 'Pricing' },
-  { href: url('/blog'), label: 'Blog' },
-  { href: url('/contact'), label: 'Contact' },
+  { href: localePath(lang, '/'), label: t(lang, 'nav.home') },
+  { href: localePath(lang, '/pricing'), label: t(lang, 'nav.pricing') },
+  { href: localePath(lang, '/blog'), label: t(lang, 'nav.blog') },
+  { href: localePath(lang, '/contact'), label: t(lang, 'nav.contact') },
 ];
 
 function isActive(href: string): boolean {
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   const homeHref = base ? `${base}/` : '/';
-  if (href === homeHref || href === url('/')) return currentPath === homeHref || currentPath === `${base}` || currentPath === '/';
+  // For locale-prefixed home routes
+  const localeHomeHref = lang !== 'en' ? `${base}/${lang}/` : homeHref;
+
+  if (href === homeHref || href === localeHomeHref || href === localePath(lang, '/')) {
+    return currentPath === homeHref || currentPath === localeHomeHref || currentPath === `${base}` || currentPath === '/';
+  }
   return currentPath.startsWith(href);
 }
+
+// Current locale info for switcher
+const currentLocale = SUPPORTED_LOCALES.find((l) => l.code === lang) || SUPPORTED_LOCALES[0];
+
+// Build language switcher URLs
+const languageLinks = SUPPORTED_LOCALES.map((loc) => ({
+  ...loc,
+  href: switchLocaleUrl(Astro.url, loc.code),
+  active: loc.code === lang,
+}));
 ---
 
 <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100" role="banner">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
     <div class="flex items-center justify-between h-16 md:h-20">
       <!-- Logo -->
-      <a href={url('/')} class="flex items-center gap-2 group" aria-label="Merrily Plan - Home">
+      <a href={localePath(lang, '/')} class="flex items-center gap-2 group" aria-label={t(lang, 'nav.logoAlt')}>
         <div class="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-md shadow-primary-500/20">
           <svg class="w-5 h-5 md:w-6 md:h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -50,13 +71,55 @@ function isActive(href: string): boolean {
         ))}
       </div>
 
-      <!-- CTA + Mobile Toggle -->
-      <div class="flex items-center gap-4">
+      <!-- CTA + Language Switcher + Mobile Toggle -->
+      <div class="flex items-center gap-3">
+        <!-- Language Switcher (Desktop) -->
+        <div class="relative hidden sm:block" id="lang-switcher">
+          <button
+            type="button"
+            class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+            id="lang-switcher-btn"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>{currentLocale.nativeName}</span>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          <!-- Dropdown -->
+          <div
+            id="lang-dropdown"
+            class="absolute right-0 top-full mt-1 w-48 bg-white rounded-xl shadow-lg border border-gray-200 py-2 hidden z-50"
+            role="menu"
+          >
+            {languageLinks.map((loc) => (
+              <a
+                href={loc.href}
+                class:list={[
+                  'flex items-center gap-2 px-4 py-2 text-sm transition-colors',
+                  loc.active
+                    ? 'text-primary-600 bg-primary-50 font-medium'
+                    : 'text-gray-700 hover:bg-gray-50',
+                ]}
+                role="menuitem"
+              >
+                <span class="text-base">{loc.flag}</span>
+                <span>{loc.nativeName}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+
         <a
           href="https://app.merrilyplan.com"
           class="hidden sm:inline-flex items-center px-5 py-2 rounded-full bg-primary-600 text-white text-sm font-semibold hover:bg-primary-700 transition-all duration-200 shadow-md shadow-primary-600/20 hover:shadow-lg hover:shadow-primary-600/30 hover:-translate-y-0.5"
         >
-          Open App
+          {t(lang, 'nav.openApp')}
         </a>
 
         <!-- Mobile menu button -->
@@ -64,7 +127,7 @@ function isActive(href: string): boolean {
           type="button"
           class="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors"
           id="mobile-menu-btn"
-          aria-label="Toggle menu"
+          aria-label={t(lang, 'nav.toggleMenu')}
           aria-expanded="false"
         >
           <svg class="w-6 h-6 menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -93,12 +156,34 @@ function isActive(href: string): boolean {
             {label}
           </a>
         ))}
+
+        <!-- Mobile Language Switcher -->
+        <div class="pt-3 px-3 border-t border-gray-100 mt-3">
+          <p class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Language</p>
+          <div class="grid grid-cols-2 gap-1">
+            {languageLinks.map((loc) => (
+              <a
+                href={loc.href}
+                class:list={[
+                  'flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-colors',
+                  loc.active
+                    ? 'text-primary-600 bg-primary-50 font-medium'
+                    : 'text-gray-600 hover:bg-gray-50',
+                ]}
+              >
+                <span>{loc.flag}</span>
+                <span>{loc.nativeName}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+
         <div class="pt-3 px-3">
           <a
             href="https://app.merrilyplan.com"
             class="block w-full text-center px-5 py-2.5 rounded-full bg-primary-600 text-white text-sm font-semibold hover:bg-primary-700 transition-colors"
           >
-            Open App
+            {t(lang, 'nav.openApp')}
           </a>
         </div>
       </div>
@@ -107,6 +192,7 @@ function isActive(href: string): boolean {
 </header>
 
 <script>
+  // Mobile menu toggle
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
   const menuIcon = btn?.querySelector('.menu-icon');
@@ -117,5 +203,21 @@ function isActive(href: string): boolean {
     menuIcon?.classList.toggle('hidden', isOpen);
     closeIcon?.classList.toggle('hidden', !isOpen);
     btn.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Language switcher toggle (desktop)
+  const langBtn = document.getElementById('lang-switcher-btn');
+  const langDropdown = document.getElementById('lang-dropdown');
+
+  langBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = langDropdown?.classList.toggle('hidden') === false;
+    langBtn.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', () => {
+    langDropdown?.classList.add('hidden');
+    langBtn?.setAttribute('aria-expanded', 'false');
   });
 </script>

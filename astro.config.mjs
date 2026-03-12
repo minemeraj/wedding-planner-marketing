@@ -12,6 +12,13 @@ export default defineConfig({
     mdx(),
   ],
   output: 'static',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'es', 'fr', 'de', 'pt', 'it', 'ja', 'zh', 'ko', 'hi'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   markdown: {
     shikiConfig: {
       theme: 'one-dark-pro',

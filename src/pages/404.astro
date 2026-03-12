@@ -1,29 +1,31 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { url } from '../utils/url';
+import { localePath } from '../utils/url';
+import { getLocaleFromUrl, t, type Locale } from '../i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
 ---
 
 <BaseLayout
-  title="Page Not Found"
-  description="The page you're looking for doesn't exist."
+  title={t(locale, 'notFound.title')}
+  description={t(locale, 'notFound.description')}
   noindex={true}
 >
   <section class="py-28 md:py-40">
     <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="text-8xl font-display font-bold gradient-text mb-6">404</div>
       <h1 class="text-2xl md:text-3xl font-display font-bold text-gray-900 mb-4">
-        Page Not Found
+        {t(locale, 'notFound.heading')}
       </h1>
       <p class="text-gray-600 mb-8">
-        The page you're looking for doesn't exist or has been moved.
-        Let's get you back on track.
+        {t(locale, 'notFound.text')}
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href={url('/')} class="btn-primary">
-          Go Home
+        <a href={localePath(locale, '/')} class="btn-primary">
+          {t(locale, 'notFound.goHome')}
         </a>
-        <a href={url('/blog')} class="btn-secondary">
-          Read Our Blog
+        <a href={localePath(locale, '/blog')} class="btn-secondary">
+          {t(locale, 'notFound.readBlog')}
         </a>
       </div>
     </div>

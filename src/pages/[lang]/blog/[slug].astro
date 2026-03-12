@@ -1,15 +1,21 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { localePath } from '../../utils/url';
-import { getLocaleFromUrl, t, type Locale } from '../../i18n/utils';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { localePath } from '../../../utils/url';
+import { getLocaleFromUrl, t, SUPPORTED_LOCALES, DEFAULT_LOCALE, type Locale } from '../../../i18n/utils';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: { post },
-  }));
+  const locales = SUPPORTED_LOCALES
+    .filter((l) => l.code !== DEFAULT_LOCALE)
+    .map((l) => l.code);
+
+  return locales.flatMap((lang) =>
+    posts.map((post) => ({
+      params: { lang, slug: post.id },
+      props: { post },
+    }))
+  );
 }
 
 const locale = getLocaleFromUrl(Astro.url) as Locale;

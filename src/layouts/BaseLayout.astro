@@ -3,7 +3,11 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import { url } from '../utils/url';
+import { getLocaleFromUrl, t, SUPPORTED_LOCALES, localizedUrl, type Locale } from '../i18n/utils';
 import '../styles/global.css';
+
+// Determine locale from URL
+const locale = getLocaleFromUrl(Astro.url) as Locale;
 
 // Organization schema — injected on every page
 const orgSchema = {
@@ -43,10 +47,37 @@ const {
 const siteTitle = 'Merrily Plan';
 const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, Astro.site).href;
+
+/**
+ * Build hreflang URLs for the current page in all locales.
+ * Strips current locale prefix and re-applies each locale.
+ */
+function getHreflangUrl(loc: string): string {
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+  let pathname = Astro.url.pathname;
+
+  // Strip base
+  if (base && pathname.startsWith(base)) {
+    pathname = pathname.slice(base.length);
+  }
+
+  // Strip existing locale prefix
+  const segments = pathname.split('/').filter(Boolean);
+  if (segments.length > 0) {
+    const maybeLocale = segments[0];
+    if (SUPPORTED_LOCALES.some((l) => l.code === maybeLocale) && maybeLocale !== 'en') {
+      segments.shift();
+    }
+  }
+
+  const cleanPath = '/' + segments.join('/');
+  const localePath = localizedUrl(loc as Locale, cleanPath);
+  return new URL(localePath, Astro.site).href;
+}
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -68,6 +99,7 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, Astro
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:site_name" content={siteTitle} />
+    <meta property="og:locale" content={locale} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -79,17 +111,10 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, Astro
     <link rel="sitemap" href={url('/sitemap-index.xml')} />
 
     <!-- Hreflang tags for international SEO -->
-    <link rel="alternate" hreflang="en" href={canonical} />
-    <link rel="alternate" hreflang="es" href={canonical} />
-    <link rel="alternate" hreflang="fr" href={canonical} />
-    <link rel="alternate" hreflang="de" href={canonical} />
-    <link rel="alternate" hreflang="pt" href={canonical} />
-    <link rel="alternate" hreflang="it" href={canonical} />
-    <link rel="alternate" hreflang="ja" href={canonical} />
-    <link rel="alternate" hreflang="zh" href={canonical} />
-    <link rel="alternate" hreflang="ko" href={canonical} />
-    <link rel="alternate" hreflang="hi" href={canonical} />
-    <link rel="alternate" hreflang="x-default" href={canonical} />
+    {SUPPORTED_LOCALES.map((loc) => (
+      <link rel="alternate" hreflang={loc.code} href={getHreflangUrl(loc.code)} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={getHreflangUrl('en')} />
 
     <!-- JSON-LD Structured Data: Organization (every page) -->
     <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
@@ -109,13 +134,13 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, Astro
   <body class="min-h-screen flex flex-col bg-white">
     <!-- Skip to main content link for keyboard/screen reader users -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none">
-      Skip to main content
+      {t(locale, 'nav.skipToContent')}
     </a>
-    <Header />
+    <Header lang={locale} />
     <main id="main-content" class="flex-1">
       <slot />
     </main>
-    <Footer />
-    <CookieConsent />
+    <Footer lang={locale} />
+    <CookieConsent lang={locale} />
   </body>
 </html>

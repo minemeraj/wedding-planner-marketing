@@ -23,3 +23,26 @@ export function url(path: string): string {
   if (cleanPath.startsWith(cleanBase)) return cleanPath;
   return `${cleanBase}${cleanPath}`;
 }
+
+/**
+ * Locale-aware URL helper.
+ * For the default locale (en), returns the base-prefixed path.
+ * For other locales, inserts the locale segment after the base.
+ *
+ * Usage:  href={localePath(lang, '/pricing')}
+ *
+ * localePath('en', '/pricing') => '/wedding-planner-marketing/pricing'
+ * localePath('es', '/pricing') => '/wedding-planner-marketing/es/pricing'
+ * localePath('fr', '/')        => '/wedding-planner-marketing/fr/'
+ */
+export function localePath(lang: string, path: string): string {
+  const base = import.meta.env.BASE_URL;
+  const cleanBase = (base === '/' || base === '') ? '' : (base.endsWith('/') ? base.slice(0, -1) : base);
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+
+  if (lang === 'en') {
+    return cleanBase ? `${cleanBase}${cleanPath}` : cleanPath;
+  }
+
+  return cleanBase ? `${cleanBase}/${lang}${cleanPath}` : `/${lang}${cleanPath}`;
+}

@@ -1,6 +1,12 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { getLocaleFromUrl, t, tArray, type Locale } from '../i18n/utils';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getLocaleFromUrl, t, tArray, SUPPORTED_LOCALES, DEFAULT_LOCALE, type Locale } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return SUPPORTED_LOCALES
+    .filter((l) => l.code !== DEFAULT_LOCALE)
+    .map((l) => ({ params: { lang: l.code } }));
+}
 
 const locale = getLocaleFromUrl(Astro.url) as Locale;
 

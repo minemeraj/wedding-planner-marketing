@@ -1,0 +1,578 @@
+{
+  "nav": {
+    "home": "Home",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "contact": "Contact",
+    "openApp": "Open App",
+    "toggleMenu": "Toggle menu",
+    "logoAlt": "Merrily Plan - Home",
+    "skipToContent": "Skip to main content"
+  },
+  "footer": {
+    "tagline": "The all-in-one wedding planning app that helps couples and planners organize every detail of the perfect day.",
+    "product": "Product",
+    "resources": "Resources",
+    "company": "Company",
+    "features": "Features",
+    "openApp": "Open App",
+    "weddingChecklist": "Wedding Checklist",
+    "aiWeddingPlanner": "AI Wedding Planner",
+    "budgetGuide": "Budget Guide",
+    "contactUs": "Contact Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "copyright": "Merrily Plan. All rights reserved."
+  },
+  "cookie": {
+    "title": "We Value Your Privacy",
+    "description": "We use cookies to improve your experience, analyze site traffic, and personalize content. You can choose which cookies to accept.",
+    "privacyPolicy": "Privacy Policy",
+    "strictlyNecessary": "Strictly Necessary",
+    "strictlyNecessaryDesc": "Essential for the site to function",
+    "alwaysOn": "Always on",
+    "functional": "Functional",
+    "functionalDesc": "Remember your preferences and settings",
+    "analytics": "Analytics",
+    "analyticsDesc": "Help us understand how visitors use the site",
+    "marketing": "Marketing",
+    "marketingDesc": "Personalize ads and measure campaign performance",
+    "acceptAll": "Accept All",
+    "rejectAll": "Reject All",
+    "managePreferences": "Manage Preferences",
+    "hidePreferences": "Hide Preferences",
+    "savePreferences": "Save Preferences",
+    "cookieSettings": "Cookies",
+    "cookieSettingsAria": "Cookie settings"
+  },
+  "home": {
+    "meta": {
+      "title": "Merrily Plan",
+      "description": "The all-in-one wedding planning app with 32+ planning tools, AI assistance, offline support, and multi-platform availability. Free to start, no account required."
+    },
+    "hero": {
+      "badge": "Free to use \u00b7 No account required",
+      "titleLine1": "Plan Your Dream Wedding,",
+      "titleHighlight": " Merrily.",
+      "subtitle": "The all-in-one wedding planning app with 32+ tools, AI-powered assistance, and offline support. Works on every platform. Free to start.",
+      "ctaPrimary": "Start Planning Free",
+      "ctaSecondary": "See Features"
+    },
+    "stats": {
+      "planningTools": "Planning Tools",
+      "languages": "Languages",
+      "platforms": "Platforms",
+      "freeToStart": "Free to Start"
+    },
+    "features": {
+      "heading": "Everything You Need to Plan",
+      "headingHighlight": " the Perfect Day",
+      "subheading": "From the first budget estimate to the last thank-you note, Merrily Plan guides you through every step.",
+      "planningTabs": "32+ Planning Tabs",
+      "planningTabsDesc": "From budget tracking and guest lists to seating plans and day-of timelines. Every tool you need in one place.",
+      "aiAssistance": "AI-Powered Assistance",
+      "aiAssistanceDesc": "Smart suggestions for budgets, timelines, vendor questions, and more. Let AI handle the complexity.",
+      "collaborate": "Collaborate Together",
+      "collaborateDesc": "Share your plan with your partner, family, or wedding planner. Real-time collaboration keeps everyone aligned.",
+      "worksEverywhere": "Works Everywhere",
+      "worksEverywhereDesc": "Web, Android, iOS, Windows, macOS, and Linux. Plan from your desk or on the go.",
+      "dataPrivacy": "Your Data, Your Way",
+      "dataPrivacyDesc": "Works completely offline with local storage. No account required for the free tier.",
+      "tenLanguages": "10 Languages",
+      "tenLanguagesDesc": "Available in English, Spanish, French, German, Portuguese, Italian, Japanese, Chinese, Korean, and Hindi."
+    },
+    "tabs": {
+      "heading": "32+ Planning Tools,",
+      "headingHighlight": " One App",
+      "subheading": "Every tool a couple or wedding planner could ever need, organized into intuitive categories.",
+      "gettingStarted": "Getting Started",
+      "setup": "Setup",
+      "priorities": "Priorities",
+      "coupleProfile": "Couple Profile",
+      "moodboard": "Moodboard",
+      "budgetFinances": "Budget & Finances",
+      "weddingBudget": "Wedding Budget",
+      "honeymoonBudget": "Honeymoon Budget",
+      "guestsSeating": "Guests & Seating",
+      "guestList": "Guest List",
+      "seatingPlan": "Seating Plan",
+      "weddingParty": "Wedding Party",
+      "invitations": "Invitations",
+      "planningTasks": "Planning & Tasks",
+      "taskTracker": "Task Tracker",
+      "appointments": "Appointments",
+      "smartCalendar": "Smart Calendar",
+      "vendors": "Vendors",
+      "venueOptions": "Venue Options",
+      "vendorComparison": "Vendor Comparison",
+      "confirmedVendors": "Confirmed Vendors",
+      "vendorQuestions": "Vendor Questions",
+      "eventDetails": "Event Details",
+      "foodDrinks": "Food & Drinks",
+      "logistics": "Logistics",
+      "decor": "Decor",
+      "musicPlaylist": "Music Playlist",
+      "photoShotlist": "Photo Shotlist",
+      "theBigDay": "The Big Day",
+      "dayTimeline": "Day Timeline",
+      "packingList": "Packing List",
+      "afterWedding": "After the Wedding",
+      "giftThankYou": "Gift & Thank-You Log",
+      "coupleBlog": "Couple Blog",
+      "overviewExport": "Overview & Export",
+      "dashboard": "Dashboard",
+      "printableSummary": "Printable Summary",
+      "weddingTrailer": "Wedding Trailer",
+      "inspirationGallery": "Inspiration Gallery"
+    },
+    "howItWorks": {
+      "heading": "Start Planning in",
+      "headingHighlight": " 3 Simple Steps",
+      "step1Title": "Open the App",
+      "step1Desc": "No sign-up required. Just open Merrily Plan in your browser or download the app. Your data stays on your device.",
+      "step2Title": "Set Your Priorities",
+      "step2Desc": "Tell us your wedding date, budget, and what matters most. Merrily Plan creates a personalized planning roadmap.",
+      "step3Title": "Plan Together",
+      "step3Desc": "Use 32+ tools to track budgets, manage guests, compare vendors, and coordinate every detail of your special day."
+    },
+    "appPreview": {
+      "heading": "See It in",
+      "headingHighlight": " Action",
+      "subheading": "A beautiful, intuitive interface designed to make wedding planning a joy, not a chore.",
+      "ctaTryFree": "Try It Free",
+      "sidebar": {
+        "dashboard": "Dashboard",
+        "weddingBudget": "Wedding Budget",
+        "guestList": "Guest List",
+        "taskTracker": "Task Tracker",
+        "seatingPlan": "Seating Plan",
+        "vendorComparison": "Vendor Comparison",
+        "dayTimeline": "Day Timeline",
+        "moreTabs": "+ 25 more tabs"
+      },
+      "dashboardTitle": "Wedding Dashboard",
+      "dashboardSubtitle": "June 15, 2026 - 128 days to go",
+      "onTrack": "On Track",
+      "budget": "Budget",
+      "budgetOf": "of $30,000",
+      "guests": "Guests",
+      "guestsConfirmed": "86 confirmed",
+      "tasks": "Tasks",
+      "tasksDone": "62% done",
+      "vendorsLabel": "Vendors",
+      "vendorsConfirmed": "5 confirmed",
+      "overallProgress": "Overall Progress",
+      "upcomingTasks": "Upcoming Tasks",
+      "task1": "Finalize ceremony music playlist",
+      "task2": "Send RSVP reminders",
+      "task3": "Book hair & makeup trial"
+    },
+    "testimonials": {
+      "heading": "Loved by Couples",
+      "headingHighlight": " & Planners",
+      "quote1": "Merrily Plan made our wedding planning so much less stressful. The budget tracker alone saved us thousands!",
+      "name1": "Sarah & James",
+      "role1": "Married October 2025",
+      "quote2": "As a professional wedding planner, I recommend Merrily Plan to all my clients. The collaboration features are outstanding.",
+      "name2": "Rebecca Torres",
+      "role2": "Wedding Planner, 8+ years",
+      "quote3": "We loved that everything works offline. We planned our destination wedding from planes, hotels, and coffee shops.",
+      "name3": "Mia & David",
+      "role3": "Married June 2025"
+    },
+    "trustSignals": {
+      "trustedBy": "Trusted by Couples Worldwide",
+      "plansCreated": "Wedding Plans Created",
+      "countries": "Countries",
+      "avgRating": "Average Rating",
+      "planningToolsLabel": "Planning Tools",
+      "featuredIn": "As Featured In"
+    },
+    "faq": {
+      "heading": "Frequently Asked",
+      "headingHighlight": " Questions",
+      "subheading": "Everything you need to know about Merrily Plan.",
+      "q1": "Is Merrily Plan really free?",
+      "a1": "Yes! The Free plan includes all 32 planning tabs, offline local storage, JSON export/import, and browser print support. No account required, no credit card, no trial period.",
+      "q2": "What devices does Merrily Plan work on?",
+      "a2": "Merrily Plan works on Web (any modern browser), Android, iOS, Windows, macOS, and Linux. It is a Progressive Web App (PWA) that you can install on any device.",
+      "q3": "Do I need an internet connection?",
+      "a3": "No! The Free plan works entirely offline using your browser local storage. Your data never leaves your device unless you choose to upgrade to Pro for cloud sync.",
+      "q4": "What languages are supported?",
+      "a4": "Merrily Plan is available in 10 languages: English, Spanish, French, German, Portuguese, Italian, Japanese, Chinese, Korean, and Hindi.",
+      "q5": "How is Merrily Plan different from other wedding planners?",
+      "a5": "Merrily Plan offers 32+ dedicated planning tools in a single app, works completely offline without requiring an account, supports 6 platforms natively, and gives you full data ownership with JSON export. Most competitors require accounts and store your data on their servers.",
+      "q6": "Can I collaborate with my partner or wedding planner?",
+      "a6": "Yes! The Pro plan includes real-time collaboration, plan sharing, and team access so your partner, family members, or wedding planner can work together seamlessly."
+    },
+    "platforms": {
+      "heading": "Plan from",
+      "headingHighlight": " Any Device",
+      "subheading": "Merrily Plan works on every major platform. Start on your laptop, continue on your phone.",
+      "webPwa": "Web / PWA",
+      "android": "Android",
+      "ios": "iOS",
+      "windows": "Windows",
+      "macos": "macOS",
+      "linux": "Linux"
+    },
+    "finalCta": {
+      "heading": "Your Perfect Day Starts Here",
+      "subheading": "Join thousands of couples and wedding planners who trust Merrily Plan to organize every detail. Free forever, no credit card required.",
+      "ctaPrimary": "Start Planning Free",
+      "ctaSecondary": "View Pricing"
+    }
+  },
+  "pricing": {
+    "meta": {
+      "title": "Pricing",
+      "description": "Merrily Plan is free forever with all 32 planning tools. Upgrade to Pro for cloud sync, AI features, collaboration, and unlimited plans."
+    },
+    "hero": {
+      "heading": "Simple, Transparent",
+      "headingHighlight": " Pricing",
+      "subheading": "Start free with all 32 planning tools. Upgrade when you need cloud sync, collaboration, and AI."
+    },
+    "free": {
+      "title": "Free",
+      "subtitle": "Perfect for couples planning their wedding",
+      "price": "$0",
+      "pricePeriod": "/ forever",
+      "cta": "Get Started Free",
+      "features": [
+        "All 32 planning tabs",
+        "Offline local storage",
+        "JSON export & import",
+        "Browser print support",
+        "Single wedding plan",
+        "10 language support",
+        "PWA installable",
+        "No account required"
+      ]
+    },
+    "pro": {
+      "title": "Pro",
+      "subtitle": "For serious planners and professionals",
+      "badge": "Most Popular",
+      "price": "$9",
+      "pricePeriod": "/ month",
+      "annualNote": "or $79/year (save 27%)",
+      "cta": "Start Free Trial",
+      "featuresHeader": "Everything in Free, plus:",
+      "features": [
+        "Unlimited wedding plans",
+        "Cloud sync across devices",
+        "Real-time collaboration",
+        "AI-powered suggestions",
+        "PDF export with branding",
+        "Published wedding website",
+        "Online RSVP management",
+        "Plan sharing & team access",
+        "Priority support"
+      ]
+    },
+    "faq": {
+      "heading": "Frequently Asked Questions",
+      "q1": "Is the free plan really free forever?",
+      "a1": "Yes! The free plan includes all 32 planning tabs, offline storage, and JSON export/import. No credit card required, no trial period, no hidden fees.",
+      "q2": "Can I upgrade or downgrade at any time?",
+      "a2": "Absolutely. You can upgrade to Pro whenever you need cloud sync or collaboration features. Your free-tier data is preserved. You can downgrade anytime too -- your data stays on your device.",
+      "q3": "Do I need to create an account for the free plan?",
+      "a3": "No! The free plan works entirely offline using your browser's local storage. No account, no email, no sign-up. Just open the app and start planning.",
+      "q4": "What happens to my data if I cancel Pro?",
+      "a4": "Your data remains on your device and in your local storage. You can export it as JSON at any time. Cloud sync will stop, but nothing is deleted.",
+      "q5": "Is there a refund policy?",
+      "a5": "Yes, we offer a 30-day money-back guarantee on all Pro subscriptions. If you're not satisfied, contact us for a full refund.",
+      "q6": "Can professional wedding planners use this for multiple clients?",
+      "a6": "Yes! With the Pro plan, you get unlimited wedding plans, making it perfect for professional planners managing multiple weddings simultaneously."
+    },
+    "cta": {
+      "heading": "Ready to Start Planning?",
+      "subheading": "No credit card required. Start with the free plan today.",
+      "button": "Start Planning Free"
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact Us",
+      "description": "Get in touch with the Merrily Plan team. We'd love to hear your feedback, answer your questions, or discuss partnership opportunities."
+    },
+    "hero": {
+      "heading": "Get in",
+      "headingHighlight": " Touch",
+      "subheading": "Have a question, feedback, or partnership idea? We'd love to hear from you."
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "subjectLabel": "Subject",
+      "subjectPlaceholder": "Select a topic",
+      "subjectGeneral": "General Question",
+      "subjectSupport": "Technical Support",
+      "subjectFeedback": "Feedback & Suggestions",
+      "subjectPartnership": "Partnership / Business",
+      "subjectPress": "Press & Media",
+      "subjectOther": "Other",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell us how we can help...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "successTitle": "Message sent!",
+      "successText": "We'll get back to you within 24-48 hours.",
+      "errorAlert": "Something went wrong. Please try again or email us directly at hello@merrilyplan.com"
+    },
+    "info": {
+      "otherWays": "Other Ways to Reach Us",
+      "emailLabel": "Email",
+      "inAppFeedback": "In-App Feedback",
+      "inAppFeedbackDesc": "Use the feedback button inside the app for the fastest response.",
+      "responseTime": "Response Time",
+      "responseTimeDesc": "We typically respond within 24-48 hours.",
+      "lookingForAnswers": "Looking for answers?",
+      "lookingForAnswersDesc": "Check our pricing FAQ for common questions about plans, billing, and features.",
+      "viewFaq": "View FAQ"
+    }
+  },
+  "checklist": {
+    "meta": {
+      "title": "Free Wedding Checklist 2025-2026",
+      "description": "Complete month-by-month wedding planning checklist with 32+ free tools. Track every task from engagement to honeymoon with Merrily Plan."
+    },
+    "hero": {
+      "badge": "Free Wedding Planning Tool",
+      "heading": "Your Complete",
+      "headingHighlight": " Wedding Checklist",
+      "subheading": "A month-by-month wedding planning timeline with every task you need. Track your progress with Merrily Plan's free Task Tracker -- no account required.",
+      "ctaPrimary": "Start Your Checklist Free",
+      "ctaSecondary": "View Timeline"
+    },
+    "whyChecklist": {
+      "heading": "Why You Need a",
+      "headingHighlight": " Wedding Checklist",
+      "subheading": "The average wedding involves 100+ tasks across 10+ months. A structured checklist keeps you organized and stress-free.",
+      "neverMissTitle": "Never Miss a Task",
+      "neverMissDesc": "From booking vendors to writing thank-you notes, every task is accounted for and trackable.",
+      "stayOnScheduleTitle": "Stay on Schedule",
+      "stayOnScheduleDesc": "Month-by-month breakdown ensures you tackle tasks at the right time without last-minute panic.",
+      "collaborateTitle": "Collaborate Easily",
+      "collaborateDesc": "Share your checklist with your partner, family, or planner so everyone knows what needs doing."
+    },
+    "timeline": {
+      "heading": "Month-by-Month",
+      "headingHighlight": " Wedding Timeline",
+      "subheading": "Follow this proven timeline to stay on track from engagement to \"I do.\"",
+      "period1": "12+ Months Before",
+      "period1Tasks": [
+        "Set your wedding budget",
+        "Determine your priorities as a couple",
+        "Choose a wedding date (or 2-3 options)",
+        "Start your guest list draft",
+        "Research and book your venue",
+        "Book your wedding planner (if using one)",
+        "Start researching vendors"
+      ],
+      "period2": "9-11 Months Before",
+      "period2Tasks": [
+        "Book photographer and videographer",
+        "Book caterer or finalize venue catering",
+        "Choose your wedding party",
+        "Start dress/attire shopping",
+        "Book officiant",
+        "Research florists and decorators",
+        "Plan engagement party"
+      ],
+      "period3": "6-8 Months Before",
+      "period3Tasks": [
+        "Book florist, DJ/band, and other vendors",
+        "Order invitations and stationery",
+        "Plan ceremony details",
+        "Book honeymoon travel",
+        "Start wedding registry",
+        "Plan rehearsal dinner",
+        "Schedule dress fittings"
+      ],
+      "period4": "3-5 Months Before",
+      "period4Tasks": [
+        "Send wedding invitations",
+        "Finalize menu and tasting",
+        "Order wedding cake",
+        "Book transportation",
+        "Purchase wedding rings",
+        "Plan seating arrangements",
+        "Apply for marriage license"
+      ],
+      "period5": "1-2 Months Before",
+      "period5Tasks": [
+        "Confirm all vendor details",
+        "Final dress fitting",
+        "Create day-of timeline",
+        "Prepare wedding favors",
+        "Break in wedding shoes",
+        "Finalize seating chart",
+        "Write vows"
+      ],
+      "period6": "Final Week",
+      "period6Tasks": [
+        "Confirm final guest count with vendors",
+        "Pack for honeymoon",
+        "Prepare emergency kit",
+        "Rehearsal and rehearsal dinner",
+        "Delegate day-of responsibilities",
+        "Relax and enjoy the moment"
+      ]
+    },
+    "whyMerrilyPlan": {
+      "heading": "Why Track Your Checklist with",
+      "headingHighlight": " Merrily Plan",
+      "taskTracker": "Task Tracker",
+      "taskTrackerDesc": "Built-in task management with due dates and progress tracking",
+      "smartCalendar": "Smart Calendar",
+      "smartCalendarDesc": "Visual calendar with all deadlines and appointments in one view",
+      "budgetTracker": "Budget Tracker",
+      "budgetTrackerDesc": "Track every expense against your budget in real time",
+      "shareCollaborate": "Share & Collaborate",
+      "shareCollaborateDesc": "Share tasks with your partner or wedding planner"
+    },
+    "faq": {
+      "heading": "Wedding Checklist",
+      "headingHighlight": " FAQs",
+      "q1": "When should I start planning my wedding?",
+      "a1": "Ideally 12-18 months before your wedding date. This gives you enough time for venue booking, vendor selection, and all the details. However, weddings can be successfully planned in as little as 3-6 months.",
+      "q2": "What is the first thing to do when planning a wedding?",
+      "a2": "Set your budget and determine your priorities as a couple. Everything else -- venue, guest list, vendors -- flows from your budget. Merrily Plan helps you do this with dedicated Budget and Priorities tabs.",
+      "q3": "How much does the average wedding cost?",
+      "a3": "The average U.S. wedding costs around $35,000-$40,000 (2025), but this varies enormously by region. Urban weddings typically cost 40-60% more than rural ones. Use our Budget Tracker to stay on top of spending.",
+      "q4": "Can I plan a wedding in 3 months?",
+      "a4": "Yes! Focus on securing a venue, officiant, and photographer first. Skip custom details that need long lead times (custom invitations, custom dress). Merrily Plan prioritized task list helps you focus on what matters most with short timelines.",
+      "q5": "Do I need a wedding planner?",
+      "a5": "Not necessarily. A digital tool like Merrily Plan gives you 32+ planning tabs covering everything a professional planner would handle. For complex or large weddings, a professional planner combined with Merrily Plan is an excellent combination."
+    },
+    "cta": {
+      "heading": "Start Checking Off Your Wedding To-Dos",
+      "subheading": "Open Merrily Plan and start tracking your wedding checklist for free. No account needed, works offline, available on all platforms.",
+      "ctaPrimary": "Open Merrily Plan Free",
+      "ctaSecondary": "Read Full Guide"
+    }
+  },
+  "ai": {
+    "meta": {
+      "title": "AI Wedding Planner - Smart Wedding Planning with AI",
+      "description": "Plan your wedding with AI-powered tools. Smart budget suggestions, automated timelines, intelligent vendor questions, and seating optimization. Free to start."
+    },
+    "hero": {
+      "badge": "AI-Powered Wedding Planning",
+      "heading": "Plan Your Wedding with",
+      "headingHighlight": " Artificial Intelligence",
+      "subheading": "Let AI handle the complexity of wedding planning. Smart budget allocation, automated timelines, intelligent vendor questions -- all while you stay in control.",
+      "ctaPrimary": "Try AI Planning Free",
+      "ctaSecondary": "See AI Features"
+    },
+    "howItWorks": {
+      "heading": "How AI Wedding Planning",
+      "headingHighlight": " Works",
+      "subheading": "Three simple steps to smarter wedding planning.",
+      "step1Title": "Enter Your Details",
+      "step1Desc": "Tell us your wedding date, budget, guest count, location, and priorities. The more details you provide, the smarter the suggestions.",
+      "step2Title": "Get AI Suggestions",
+      "step2Desc": "AI analyzes your inputs against real wedding data and generates personalized recommendations for budgets, timelines, vendors, and more.",
+      "step3Title": "Refine & Execute",
+      "step3Desc": "Review suggestions, customize them to your taste, and use Merrily Plan's 32+ tools to execute your plan. AI adapts as your plans evolve."
+    },
+    "features": {
+      "heading": "AI-Powered",
+      "headingHighlight": " Planning Features",
+      "subheading": "Intelligent tools that make wedding planning faster, smarter, and less stressful.",
+      "budgetTitle": "Smart Budget Allocation",
+      "budgetDesc": "AI analyzes your total budget, guest count, and location to suggest optimal spending across categories like venue, catering, photography, and decor.",
+      "timelineTitle": "Automated Timeline Generation",
+      "timelineDesc": "Enter your wedding date and AI creates a personalized month-by-month task list with deadlines, prioritized based on your specific wedding plans.",
+      "vendorTitle": "Intelligent Vendor Questions",
+      "vendorDesc": "AI generates tailored questions for each vendor type -- photographers, caterers, florists, DJs -- so you never forget to ask important contract details.",
+      "seatingTitle": "Seating Optimization",
+      "seatingDesc": "AI helps arrange seating by analyzing guest relationships, avoiding conflicts, grouping families, and balancing table sizes for harmonious reception seating.",
+      "dayOfTitle": "Day-of Timeline Builder",
+      "dayOfDesc": "AI generates a detailed hour-by-hour wedding day schedule including prep, ceremony, photos, reception, and transitions with realistic time buffers.",
+      "contentTitle": "Content Suggestions",
+      "contentDesc": "Get AI-generated ideas for vows, toasts, wedding website text, invitation wording, and thank-you notes tailored to your style and relationship."
+    },
+    "aiAssists": {
+      "heading": "AI Assists,",
+      "headingHighlight": " You Decide",
+      "description": "We believe AI should enhance your planning experience, not replace your personal touch. Every suggestion is just that -- a suggestion. You always have full control over your wedding decisions.",
+      "point1": "AI suggestions are clearly labeled and always optional",
+      "point2": "Your data privacy is protected -- we never sell your information",
+      "point3": "Human creativity + AI efficiency = the perfect combination",
+      "point4": "Works alongside professional wedding planners, not against them",
+      "aiSuggestionLabel": "AI Suggestion",
+      "aiSuggestionText": "Based on your $30,000 budget and 120 guests, I recommend allocating 45% to venue and catering, 12% to photography...",
+      "yourDecisionLabel": "Your Decision",
+      "yourDecisionText": "Looks good! I will increase the photography budget to 15% since photos are our top priority."
+    },
+    "testimonial": {
+      "quote": "The AI budget suggestions saved us hours of research. It knew the average costs for our area and helped us allocate our budget realistically.",
+      "name": "Emily & Jordan",
+      "role": "Married August 2025, San Francisco"
+    },
+    "faq": {
+      "heading": "AI Wedding Planning",
+      "headingHighlight": " FAQs",
+      "q1": "How does AI wedding planning work?",
+      "a1": "Merrily Plan uses AI to analyze your wedding details -- budget, guest count, location, priorities -- and generates smart suggestions for budget allocation, timeline tasks, vendor questions, and more. You always remain in control and can accept, modify, or ignore any suggestion.",
+      "q2": "Is AI wedding planning safe? Will my data be shared?",
+      "a2": "Your privacy is our priority. AI suggestions are generated based on your inputs, and we never sell your data to third parties. On the Free plan, your data never even leaves your device. On Pro, data is encrypted in transit and at rest.",
+      "q3": "Can AI replace a human wedding planner?",
+      "a3": "AI is a powerful assistant, not a replacement. It excels at data-driven tasks like budget optimization, timeline generation, and vendor comparison. For creative decisions, venue visits, and day-of coordination, a human planner adds irreplaceable value. Many professional planners use Merrily Plan alongside their expertise.",
+      "q4": "What AI features are included in the Free plan?",
+      "a4": "The Free plan includes all 32 planning tools and basic organizational features. Advanced AI-powered suggestions (smart budget allocation, AI-generated timelines, intelligent vendor questions) are available in the Pro plan at $9/month.",
+      "q5": "How accurate are AI budget suggestions?",
+      "a5": "AI budget suggestions are based on real wedding cost data and regional averages. They provide a strong starting point that you should adjust based on your specific vendors and preferences. The AI learns from your inputs and refines suggestions as you add more details."
+    },
+    "cta": {
+      "heading": "Experience AI-Powered Wedding Planning",
+      "subheading": "Join thousands of couples using AI to plan smarter, faster, and stress-free. Start with the free plan -- no account needed.",
+      "ctaPrimary": "Start Planning with AI",
+      "ctaSecondary": "Compare Plans"
+    }
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist.",
+    "heading": "Page Not Found",
+    "text": "The page you're looking for doesn't exist or has been moved. Let's get you back on track.",
+    "goHome": "Go Home",
+    "readBlog": "Read Our Blog"
+  },
+  "blog": {
+    "meta": {
+      "title": "Blog",
+      "description": "Wedding planning tips, budget guides, vendor advice, and inspiration. Expert articles to help you plan your perfect day."
+    },
+    "hero": {
+      "heading": "Wedding Planning",
+      "headingHighlight": " Blog",
+      "subheading": "Expert guides, tips, and inspiration to help you plan your dream wedding."
+    },
+    "emptyState": "Coming soon! Check back for wedding planning articles.",
+    "newsletter": {
+      "heading": "Get Planning Tips in Your Inbox",
+      "subheading": "Subscribe to our newsletter for weekly wedding planning advice, budget tips, and inspiration.",
+      "placeholder": "your@email.com",
+      "emailAria": "Email address",
+      "subscribe": "Subscribe",
+      "sending": "Sending...",
+      "successMessage": "You're subscribed! Check your inbox for confirmation.",
+      "errorMessage": "Something went wrong. Please try again.",
+      "noSpam": "No spam. Unsubscribe anytime."
+    },
+    "post": {
+      "breadcrumbHome": "Home",
+      "breadcrumbBlog": "Blog",
+      "ctaHeading": "Ready to start planning your dream wedding?",
+      "ctaText": "Join thousands of couples using Merrily Plan to organize every detail.",
+      "ctaButton": "Start Planning Free"
+    }
+  }
+}

@@ -13,9 +13,20 @@
  * Policy version tracked — if version changes, banner re-appears.
  */
 
-import { url } from '../utils/url';
+import { localePath } from '../utils/url';
+import { t, type Locale } from '../i18n/utils';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
 
 const CONSENT_VERSION = '1.0';
+
+// Pass translated strings to the client script via data attributes
+const manageText = t(lang, 'cookie.managePreferences');
+const hideText = t(lang, 'cookie.hidePreferences');
 ---
 
 <!-- Cookie Consent Banner -->
@@ -25,6 +36,8 @@ const CONSENT_VERSION = '1.0';
   role="dialog"
   aria-label="Cookie consent"
   aria-modal="true"
+  data-manage-text={manageText}
+  data-hide-text={hideText}
 >
   <div class="mx-4 w-full max-w-lg bg-white rounded-2xl shadow-2xl p-6 md:p-8 animate-slide-up">
     <!-- Header -->
@@ -35,11 +48,10 @@ const CONSENT_VERSION = '1.0';
         </svg>
       </div>
       <div>
-        <h2 class="text-lg font-display font-bold text-gray-900">We Value Your Privacy</h2>
+        <h2 class="text-lg font-display font-bold text-gray-900">{t(lang, 'cookie.title')}</h2>
         <p class="text-sm text-gray-600 mt-1 leading-relaxed">
-          We use cookies to improve your experience, analyze site traffic, and personalize content.
-          You can choose which cookies to accept.
-          <a href={url('/privacy')} class="text-primary-600 hover:underline">Privacy Policy</a>
+          {t(lang, 'cookie.description')}
+          <a href={localePath(lang, '/privacy')} class="text-primary-600 hover:underline">{t(lang, 'cookie.privacyPolicy')}</a>
         </p>
       </div>
     </div>
@@ -49,17 +61,17 @@ const CONSENT_VERSION = '1.0';
       <!-- Strictly Necessary -->
       <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
         <div>
-          <p class="text-sm font-medium text-gray-900">Strictly Necessary</p>
-          <p class="text-xs text-gray-500">Essential for the site to function</p>
+          <p class="text-sm font-medium text-gray-900">{t(lang, 'cookie.strictlyNecessary')}</p>
+          <p class="text-xs text-gray-500">{t(lang, 'cookie.strictlyNecessaryDesc')}</p>
         </div>
-        <span class="text-xs font-medium text-gray-400 px-2 py-1 bg-gray-200 rounded">Always on</span>
+        <span class="text-xs font-medium text-gray-400 px-2 py-1 bg-gray-200 rounded">{t(lang, 'cookie.alwaysOn')}</span>
       </div>
 
       <!-- Functional -->
       <label class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer group">
         <div>
-          <p class="text-sm font-medium text-gray-900">Functional</p>
-          <p class="text-xs text-gray-500">Remember your preferences and settings</p>
+          <p class="text-sm font-medium text-gray-900">{t(lang, 'cookie.functional')}</p>
+          <p class="text-xs text-gray-500">{t(lang, 'cookie.functionalDesc')}</p>
         </div>
         <input type="checkbox" id="consent-functional" class="w-5 h-5 rounded text-primary-600 focus:ring-primary-500 cursor-pointer" checked />
       </label>
@@ -67,8 +79,8 @@ const CONSENT_VERSION = '1.0';
       <!-- Analytics -->
       <label class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer group">
         <div>
-          <p class="text-sm font-medium text-gray-900">Analytics</p>
-          <p class="text-xs text-gray-500">Help us understand how visitors use the site</p>
+          <p class="text-sm font-medium text-gray-900">{t(lang, 'cookie.analytics')}</p>
+          <p class="text-xs text-gray-500">{t(lang, 'cookie.analyticsDesc')}</p>
         </div>
         <input type="checkbox" id="consent-analytics" class="w-5 h-5 rounded text-primary-600 focus:ring-primary-500 cursor-pointer" />
       </label>
@@ -76,8 +88,8 @@ const CONSENT_VERSION = '1.0';
       <!-- Marketing -->
       <label class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer group">
         <div>
-          <p class="text-sm font-medium text-gray-900">Marketing</p>
-          <p class="text-xs text-gray-500">Personalize ads and measure campaign performance</p>
+          <p class="text-sm font-medium text-gray-900">{t(lang, 'cookie.marketing')}</p>
+          <p class="text-xs text-gray-500">{t(lang, 'cookie.marketingDesc')}</p>
         </div>
         <input type="checkbox" id="consent-marketing" class="w-5 h-5 rounded text-primary-600 focus:ring-primary-500 cursor-pointer" />
       </label>
@@ -89,19 +101,19 @@ const CONSENT_VERSION = '1.0';
         id="cookie-accept-all"
         class="flex-1 px-5 py-2.5 rounded-full bg-primary-600 text-white text-sm font-semibold hover:bg-primary-700 transition-colors shadow-md"
       >
-        Accept All
+        {t(lang, 'cookie.acceptAll')}
       </button>
       <button
         id="cookie-reject-all"
         class="flex-1 px-5 py-2.5 rounded-full border-2 border-gray-300 text-gray-700 text-sm font-semibold hover:bg-gray-50 transition-colors"
       >
-        Reject All
+        {t(lang, 'cookie.rejectAll')}
       </button>
       <button
         id="cookie-manage"
         class="flex-1 px-5 py-2.5 rounded-full border-2 border-gray-300 text-gray-700 text-sm font-semibold hover:bg-gray-50 transition-colors"
       >
-        Manage Preferences
+        {t(lang, 'cookie.managePreferences')}
       </button>
     </div>
 
@@ -111,7 +123,7 @@ const CONSENT_VERSION = '1.0';
         id="cookie-save"
         class="w-full px-5 py-2.5 rounded-full bg-primary-600 text-white text-sm font-semibold hover:bg-primary-700 transition-colors shadow-md"
       >
-        Save Preferences
+        {t(lang, 'cookie.savePreferences')}
       </button>
     </div>
   </div>
@@ -121,12 +133,12 @@ const CONSENT_VERSION = '1.0';
 <button
   id="cookie-settings-btn"
   class="fixed bottom-4 left-4 z-50 hidden items-center gap-2 px-3 py-2 rounded-full bg-white shadow-lg border border-gray-200 text-gray-600 text-xs font-medium hover:text-gray-900 hover:shadow-xl transition-all"
-  aria-label="Cookie settings"
+  aria-label={t(lang, 'cookie.cookieSettingsAria')}
 >
   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
   </svg>
-  Cookies
+  {t(lang, 'cookie.cookieSettings')}
 </button>
 
 <script define:vars={{ CONSENT_VERSION }}>
@@ -200,8 +212,11 @@ const CONSENT_VERSION = '1.0';
     const prefs = document.getElementById('cookie-preferences');
     const manageBtn = document.getElementById('cookie-manage');
     const saveWrap = document.getElementById('cookie-save-wrap');
-    const acceptBtn = document.getElementById('cookie-accept-all');
-    const rejectBtn = document.getElementById('cookie-reject-all');
+    const banner = document.getElementById('cookie-consent-banner');
+
+    // Read translated strings from data attributes
+    const manageText = banner?.dataset.manageText || 'Manage Preferences';
+    const hideText = banner?.dataset.hideText || 'Hide Preferences';
 
     if (prefs && manageBtn && saveWrap) {
       const isHidden = prefs.classList.contains('hidden');
@@ -209,7 +224,7 @@ const CONSENT_VERSION = '1.0';
       saveWrap.classList.toggle('hidden');
 
       if (isHidden) {
-        manageBtn.textContent = 'Hide Preferences';
+        manageBtn.textContent = hideText;
         // Load current consent state into toggles
         const consent = getConsent();
         if (consent) {
@@ -221,7 +236,7 @@ const CONSENT_VERSION = '1.0';
           if (marketEl) marketEl.checked = consent.marketing;
         }
       } else {
-        manageBtn.textContent = 'Manage Preferences';
+        manageBtn.textContent = manageText;
       }
     }
   }

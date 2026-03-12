@@ -1,24 +1,30 @@
 ---
-import { url } from '../utils/url';
+import { localePath } from '../utils/url';
+import { t, type Locale } from '../i18n/utils';
 
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
 const currentYear = new Date().getFullYear();
 
 const footerLinks = {
   product: [
-    { label: 'Features', href: url('/#features') },
-    { label: 'Pricing', href: url('/pricing') },
-    { label: 'Open App', href: 'https://app.merrilyplan.com' },
+    { label: t(lang, 'footer.features'), href: localePath(lang, '/#features') },
+    { label: t(lang, 'nav.pricing'), href: localePath(lang, '/pricing') },
+    { label: t(lang, 'footer.openApp'), href: 'https://app.merrilyplan.com' },
   ],
   resources: [
-    { label: 'Blog', href: url('/blog') },
-    { label: 'Wedding Checklist', href: url('/wedding-checklist') },
-    { label: 'AI Wedding Planner', href: url('/ai-wedding-planner') },
-    { label: 'Budget Guide', href: url('/blog/wedding-budget-guide-2025') },
+    { label: t(lang, 'nav.blog'), href: localePath(lang, '/blog') },
+    { label: t(lang, 'footer.weddingChecklist'), href: localePath(lang, '/wedding-checklist') },
+    { label: t(lang, 'footer.aiWeddingPlanner'), href: localePath(lang, '/ai-wedding-planner') },
+    { label: t(lang, 'footer.budgetGuide'), href: localePath(lang, '/blog/wedding-budget-guide-2025') },
   ],
   company: [
-    { label: 'Contact Us', href: url('/contact') },
-    { label: 'Privacy Policy', href: url('/privacy') },
-    { label: 'Terms of Service', href: url('/terms') },
+    { label: t(lang, 'footer.contactUs'), href: localePath(lang, '/contact') },
+    { label: t(lang, 'footer.privacyPolicy'), href: localePath(lang, '/privacy') },
+    { label: t(lang, 'footer.termsOfService'), href: localePath(lang, '/terms') },
   ],
 };
 ---
@@ -28,7 +34,7 @@ const footerLinks = {
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
       <!-- Brand -->
       <div class="lg:col-span-1">
-        <a href={url('/')} class="flex items-center gap-2 mb-4" aria-label="Merrily Plan - Home">
+        <a href={localePath(lang, '/')} class="flex items-center gap-2 mb-4" aria-label={t(lang, 'nav.logoAlt')}>
           <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
             <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -37,13 +43,13 @@ const footerLinks = {
           <span class="text-lg font-display font-bold text-white">Merrily Plan</span>
         </a>
         <p class="text-sm leading-relaxed max-w-xs">
-          The all-in-one wedding planning app that helps couples and planners organize every detail of the perfect day.
+          {t(lang, 'footer.tagline')}
         </p>
       </div>
 
       <!-- Product -->
       <nav aria-label="Product links">
-        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Product</h4>
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">{t(lang, 'footer.product')}</h4>
         <ul class="space-y-3">
           {footerLinks.product.map(({ label, href }) => (
             <li>
@@ -57,7 +63,7 @@ const footerLinks = {
 
       <!-- Resources -->
       <nav aria-label="Resource links">
-        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Resources</h4>
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">{t(lang, 'footer.resources')}</h4>
         <ul class="space-y-3">
           {footerLinks.resources.map(({ label, href }) => (
             <li>
@@ -71,7 +77,7 @@ const footerLinks = {
 
       <!-- Company -->
       <nav aria-label="Company links">
-        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Company</h4>
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">{t(lang, 'footer.company')}</h4>
         <ul class="space-y-3">
           {footerLinks.company.map(({ label, href }) => (
             <li>
@@ -87,11 +93,11 @@ const footerLinks = {
     <!-- Bottom bar -->
     <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
       <p class="text-sm">
-        &copy; {currentYear} Merrily Plan. All rights reserved.
+        &copy; {currentYear} {t(lang, 'footer.copyright')}
       </p>
       <div class="flex items-center gap-6">
         <a href="https://app.merrilyplan.com" class="text-sm hover:text-white transition-colors">
-          Open App
+          {t(lang, 'footer.openApp')}
         </a>
       </div>
     </div>
