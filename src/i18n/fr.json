@@ -537,28 +537,6 @@
       "ctaSecondary": "Comparer les Plans"
     }
   },
-  "comingSoon": {
-    "title": "Bientot Disponible",
-    "description": "L'application Merrily Plan arrive bientot. Inscrivez-vous pour etre notifie lors du lancement.",
-    "badge": "En Developpement",
-    "heading": "Quelque Chose de Beau",
-    "headingHighlight": " Arrive Bientot",
-    "text": "Nous mettons la touche finale a Merrily Plan. Notre application tout-en-un de planification de mariage avec plus de 32 outils, assistance IA et support hors ligne sera bientot disponible.",
-    "notifyHeading": "Soyez le Premier Informe",
-    "notifyText": "Laissez votre email et nous vous notifierons des le lancement.",
-    "emailPlaceholder": "vous@exemple.com",
-    "emailAria": "Adresse email",
-    "notifyButton": "Me Notifier",
-    "sending": "Envoi...",
-    "successMessage": "Vous etes sur la liste ! Nous vous notifierons au lancement.",
-    "errorMessage": "Une erreur est survenue. Veuillez reessayer.",
-    "feature1": "32+ Outils de Planification",
-    "feature2": "Assistance par IA",
-    "feature3": "Fonctionne Hors Ligne",
-    "feature4": "Gratuit pour Commencer",
-    "goHome": "Accueil",
-    "viewPricing": "Voir les Tarifs"
-  },
   "notFound": {
     "title": "Page Non Trouvee",
     "description": "La page que vous recherchez n'existe pas.",

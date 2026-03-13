@@ -1,5 +1,5 @@
 ---
-import { localePath, appUrl } from '../utils/url';
+import { localePath } from '../utils/url';
 import { t, type Locale } from '../i18n/utils';
 
 interface Props {
@@ -13,7 +13,7 @@ const footerLinks = {
   product: [
     { label: t(lang, 'footer.features'), href: localePath(lang, '/#features') },
     { label: t(lang, 'nav.pricing'), href: localePath(lang, '/pricing') },
-    { label: t(lang, 'footer.openApp'), href: appUrl(lang) },
+    { label: t(lang, 'footer.openApp'), href: 'https://app.merrilyplan.com' },
   ],
   resources: [
     { label: t(lang, 'nav.blog'), href: localePath(lang, '/blog') },
@@ -96,7 +96,7 @@ const footerLinks = {
         &copy; {currentYear} {t(lang, 'footer.copyright')}
       </p>
       <div class="flex items-center gap-6">
-        <a href={appUrl(lang)} class="text-sm hover:text-white transition-colors">
+        <a href="https://app.merrilyplan.com" class="text-sm hover:text-white transition-colors">
           {t(lang, 'footer.openApp')}
         </a>
       </div>

@@ -1,20 +1,4 @@
 /**
- * Internal "app" URL.
- * While the real app is under development, all CTA buttons
- * point to an internal "Coming Soon" page instead of the
- * external app domain.
- */
-export const APP_URL = '/coming-soon';
-
-/**
- * Returns the app URL for the given locale.
- * Uses localePath so it respects BASE_URL and locale prefix.
- */
-export function appUrl(lang: string): string {
-  return localePath(lang, APP_URL);
-}
-
-/**
  * Prepend the Astro base path to an internal URL.
  * Handles trailing/leading slash deduplication.
  *

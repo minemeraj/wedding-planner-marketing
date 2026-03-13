@@ -479,7 +479,7 @@
       "step2Title": "Recibe Sugerencias IA",
       "step2Desc": "La IA analiza tus datos contra datos reales de bodas y genera recomendaciones personalizadas para presupuestos, cronogramas, proveedores y mas.",
       "step3Title": "Refina y Ejecuta",
-      "step3Desc": "Revisa las sugerencias, personal\u00edzalas a tu gusto y usa las mas de 32 herramientas de Merrily Plan para ejecutar tu plan. La IA se adapta a medida que tus planes evolucionan."
+      "step3Desc": "Revisa las sugerencias, personalízalas a tu gusto y usa las mas de 32 herramientas de Merrily Plan para ejecutar tu plan. La IA se adapta a medida que tus planes evolucionan."
     },
     "features": {
       "heading": "Funciones de Planificacion",
@@ -536,28 +536,6 @@
       "ctaPrimary": "Comienza a Planificar con IA",
       "ctaSecondary": "Comparar Planes"
     }
-  },
-  "comingSoon": {
-    "title": "Muy Pronto",
-    "description": "La app Merrily Plan llega muy pronto. Registrate para recibir notificaciones cuando lancemos.",
-    "badge": "En Desarrollo",
-    "heading": "Algo Hermoso",
-    "headingHighlight": " Llega Pronto",
-    "text": "Estamos dando los toques finales a Merrily Plan. Nuestra app todo-en-uno para planificar bodas con mas de 32 herramientas, asistencia con IA y soporte offline estara disponible pronto.",
-    "notifyHeading": "Se el Primero en Saberlo",
-    "notifyText": "Deja tu email y te notificaremos en cuanto lancemos.",
-    "emailPlaceholder": "tu@ejemplo.com",
-    "emailAria": "Direccion de email",
-    "notifyButton": "Notificarme",
-    "sending": "Enviando...",
-    "successMessage": "Estas en la lista! Te notificaremos en el lanzamiento.",
-    "errorMessage": "Algo salio mal. Por favor intenta de nuevo.",
-    "feature1": "32+ Herramientas de Planificacion",
-    "feature2": "Asistencia con IA",
-    "feature3": "Funciona Offline",
-    "feature4": "Gratis para Empezar",
-    "goHome": "Ir al Inicio",
-    "viewPricing": "Ver Precios"
   },
   "notFound": {
     "title": "Pagina No Encontrada",

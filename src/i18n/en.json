@@ -537,28 +537,6 @@
       "ctaSecondary": "Compare Plans"
     }
   },
-  "comingSoon": {
-    "title": "Coming Soon",
-    "description": "Merrily Plan app is coming soon. Sign up to be notified when we launch.",
-    "badge": "Under Development",
-    "heading": "Something Beautiful Is",
-    "headingHighlight": " Coming Soon",
-    "text": "We're putting the finishing touches on Merrily Plan. Our all-in-one wedding planning app with 32+ tools, AI assistance, and offline support will be available soon.",
-    "notifyHeading": "Be the First to Know",
-    "notifyText": "Leave your email and we'll notify you the moment we launch.",
-    "emailPlaceholder": "your@email.com",
-    "emailAria": "Email address",
-    "notifyButton": "Notify Me",
-    "sending": "Sending...",
-    "successMessage": "You're on the list! We'll notify you at launch.",
-    "errorMessage": "Something went wrong. Please try again.",
-    "feature1": "32+ Planning Tools",
-    "feature2": "AI-Powered Assistance",
-    "feature3": "Works Offline",
-    "feature4": "Free to Start",
-    "goHome": "Go Home",
-    "viewPricing": "View Pricing"
-  },
   "notFound": {
     "title": "Page Not Found",
     "description": "The page you're looking for doesn't exist.",

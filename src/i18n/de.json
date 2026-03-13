@@ -537,28 +537,6 @@
       "ctaSecondary": "Plaene Vergleichen"
     }
   },
-  "comingSoon": {
-    "title": "Demnachst Verfuegbar",
-    "description": "Die Merrily Plan App kommt bald. Melden Sie sich an, um benachrichtigt zu werden, wenn wir starten.",
-    "badge": "In Entwicklung",
-    "heading": "Etwas Wundervolles",
-    "headingHighlight": " Kommt Bald",
-    "text": "Wir geben Merrily Plan den letzten Schliff. Unsere All-in-One Hochzeitsplanungs-App mit ueber 32 Werkzeugen, KI-Unterstuetzung und Offline-Support wird bald verfuegbar sein.",
-    "notifyHeading": "Erfahren Sie es Zuerst",
-    "notifyText": "Hinterlassen Sie Ihre E-Mail und wir benachrichtigen Sie, sobald wir starten.",
-    "emailPlaceholder": "sie@beispiel.de",
-    "emailAria": "E-Mail-Adresse",
-    "notifyButton": "Benachrichtigen",
-    "sending": "Wird gesendet...",
-    "successMessage": "Sie sind auf der Liste! Wir benachrichtigen Sie zum Start.",
-    "errorMessage": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
-    "feature1": "32+ Planungswerkzeuge",
-    "feature2": "KI-gesteuerte Assistenz",
-    "feature3": "Funktioniert Offline",
-    "feature4": "Kostenlos Starten",
-    "goHome": "Startseite",
-    "viewPricing": "Preise Ansehen"
-  },
   "notFound": {
     "title": "Seite Nicht Gefunden",
     "description": "Die gesuchte Seite existiert nicht.",
